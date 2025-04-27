@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of ENG Mohamed Samir, AI & Cybersecurity Engineering Student">
+    <meta name="keywords" content="AI, Cybersecurity, Engineering, Portfolio, Mohamed Samir">
+    <meta name="author" content="Mohamed Samir">
+    <title>ENG Mohamed Samir - Cyber Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="cyberpunk">
+    <!-- Hacking Simulation -->
+    <div class="hacking-screen" id="hacking-screen">
+        <div class="terminal-hack">
+            <p id="hack-code"></p>
+            <div class="hack-progress">
+                <p>Accessing System...</p>
+                <div class="progress-bar" data-progress="100">
+                    <span class="progress-text">0%</span>
+                </div>
+            </div>
+            <h2 id="access-message"></h2>
+        </div>
+    </div>
+
+    <!-- Name Animation -->
+    <canvas id="name-animation"></canvas>
+
+    <!-- 3D Background -->
+    <canvas id="matrix-bg"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- Cybersecurity Alerts -->
+    <div class="cyber-alert" id="cyber-alert"></div>
+
+    <!-- Virus Simulation -->
+    <div class="virus-windows" id="virus-windows"></div>
+
+    <!-- Dark AI Assistant -->
+    <div class="ai-assistant">
+        <div class="assistant-header">Dark AI Assistant</div>
+        <div class="assistant-body" id="assistant-body"></div>
+        <input type="text" class="assistant-input" placeholder="Ask about Mohamed Samir..." aria-label="AI Assistant Input">
+        <button class="assistant-send">Send</button>
+    </div>
+
+    <!-- Settings Panel -->
+    <button class="settings-toggle">⚙ Settings</button>
+    <div class="settings-panel" id="settings-panel">
+        <h3>System Settings</h3>
+        <label>
+            Theme:
+            <select id="theme-select">
+                <option value="cyberpunk">Cyberpunk</option>
+                <option value="hacker">Hacker</option>
+                <option value="matrix">Matrix</option>
+            </select>
+        </label>
+        <label>
+            Language:
+            <select id="lang-select">
+                <option value="en">English</option>
+                <option value="ar">Arabic</option>
+            </select>
+        </label>
+        <label>
+            Animation Intensity:
+            <input type="range" id="animation-intensity" min="0.5" max="1.5" step="0.1" value="1">
+        </label>
+    </div>
+
+    <!-- Command Line -->
+    <div class="command-line">
+        <input type="text" placeholder="Enter command (e.g., projects, theme matrix)" aria-label="Command Line">
+        <button onclick="runCommand()">Execute</button>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <button class="sidebar-toggle">☰ Menu</button>
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div data-aos="fade-up">
+            <h1 class="glitch" data-text="ENG Mohamed Samir">ENG Mohamed Samir</h1>
+            <p class="typing" data-text="AI & Cybersecurity Engineering Student"></p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="content" data-aos="fade-right" data-aos-delay="200">
+            <h2 class="glitch" data-text="About Me">About Me</h2>
+            <div class="virtual-identity">
+                <canvas id="avatar-canvas" width="200" height="200"></canvas>
+                <p>Digital Mohamed: AI & Cybersecurity Specialist</p>
+            </div>
+            <div class="terminal-text">
+                <p>> whoami</p>
+                <p>> Mohamed Samir, AI & Cybersecurity Specialist</p>
+                <p>> Developing secure AI solutions</p>
+                <p>> Ethical hacking for stronger systems</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <h3>2019</h3>
+                    <p>Started studying AI & Cybersecurity</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <h3>2021</h3>
+                    <p>Completed first AI project</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <h3>2023</h3>
+                    <p>Earned CEH Certification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div data-aos="fade-up">
+            <h2 class="glitch" data-text="Projects">Projects</h2>
+            <div class="challenge" id="projects-challenge">
+                <p>Solve the puzzle to access projects:</p>
+                <input type="text" placeholder="Enter code: HACK2023" aria-label="Challenge Input">
+                <button onclick="solveChallenge('projects')">Submit</button>
+            </div>
+            <div class="projects-grid" style="display: none;">
+                <div class="project-card ai" data-aos="zoom-in" data-project="1">
+                    <div class="file-icon">📁</div>
+                    <h3>AI Intrusion Detection</h3>
+                    <p>Real-time network intrusion detection using deep learning.</p>
+                    <a href="https://github.com/ai-intrusion" target="_blank">View Project</a>
+                </div>
+                <div class="project-card cyber" data-aos="zoom-in" data-aos-delay="100" data-project="2">
+                    <div class="file-icon">📁</div>
+                    <h3>Secure Chat App</h3>
+                    <p>End-to-end encrypted messaging with AES and RSA.</p>
+                    <a href="https://github.com/secure-chat" target="_blank">View Project</a>
+                </div>
+                <div class="project-card web" data-aos="zoom-in" data-aos-delay="200" data-project="3">
+                    <div class="file-icon">📁</div>
+                    <h3>Cyber Portfolio</h3>
+                    <p>A hacker-themed portfolio website with advanced animations.</p>
+                    <a href="https://github.com/cyber-portfolio" target="_blank">View Project</a>
+                </div>
+                <div class="project-card cyber" data-aos="zoom-in" data-aos-delay="300" data-project="4">
+                    <div class="file-icon">📁</div>
+                    <h3>Vulnerability Scanner</h3>
+                    <p>Automated tool for detecting system vulnerabilities.</p>
+                    <a href="https://github.com/vuln-scanner" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-content">
+            <span class="modal-close">✖</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <a id="modal-link" href="#" target="_blank">View Project</a>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div data-aos="fade-up">
+            <h2 class="glitch" data-text="Skills">Skills</h2>
+            <div class="challenge" id="skills-challenge">
+                <p>Arrange files: AI, Cyber, Code</p>
+                <div class="file-order">
+                    <div class="file" data-id="Code">Code</div>
+                    <div class="file" data-id="AI">AI</div>
+                    <div class="file" data-id="Cyber">Cyber</div>
+                </div>
+                <button onclick="checkFileOrder('skills')">Submit</button>
+            </div>
+            <div class="skills-grid" style="display: none;">
+                <div class="skill-bar" data-aos="fade-right" data-aos-delay="200">
+                    <h3>Artificial Intelligence</h3>
+                    <div class="progress">
+                        <div class="progress-bar" data-progress="95">
+                            <span class="progress-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-bar" data-aos="fade-right" data-aos-delay="300">
+                    <h3>Cybersecurity</h3>
+                    <div class="progress">
+                        <div class="progress-bar" data-progress="90">
+                            <span class="progress-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-bar" data-aos="fade-right" data-aos-delay="400">
+                    <h3>Programming</h3>
+                    <div class="progress">
+                        <div class="progress-bar" data-progress="88">
+                            <span class="progress-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-bar" data-aos="fade-right" data-aos-delay="500">
+                    <h3>Web Development</h3>
+                    <div class="progress">
+                        <div class="progress-bar" data-progress="85">
+                            <span class="progress-text">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div data-aos="fade-up">
+            <h2 class="glitch" data-text="Certifications">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>Certified Ethical Hacker (CEH)</h3>
+                    <p>EC-Council</p>
+                </div>
+                <div class="certification-card" data-aos="zoom-in" data-aos-delay="300">
+                    <h3>Machine Learning</h3>
+                    <p>Stanford Online</p>
+                </div>
+                <div class="certification-card" data-aos="zoom-in" data-aos-delay="400">
+                    <h3>CompTIA Security+</h3>
+                    <p>CompTIA</p>
+                </div>
+                <div class="certification-card" data-aos="zoom-in" data-aos-delay="500">
+                    <h3>OSCP</h3>
+                    <p>Offensive Security</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Fingerprint Section -->
+    <section id="security">
+        <div data-aos="fade-up">
+            <h2 class="glitch" data-text="Security Fingerprint">Security Fingerprint</h2>
+            <div class="fingerprint">
+                <p>Device: <span id="device-info"></span></p>
+                <p>Browser: <span id="browser-info"></span></p>
+                <p>Screen: <span id="screen-info"></span></p>
+                <p class="warning">Warning: You are exposed!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container" data-aos="fade-up">
+            <h2 class="glitch" data-text="Get in Touch">Get in Touch</h2>
+            <div class="terminal-chat">
+                <div class="chat-output" id="chat-output"></div>
+                <input type="text" placeholder="send message=" aria-label="Terminal Chat">
+                <button onclick="sendChatMessage()">Send</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="quick-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <p>© 2025 ENG Mohamed Samir. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Port Scanner Simulation -->
+<div class="port-scanner" id="port-scanner">
+    <div class="terminal-scan">
+        <p id="scan-output"></p>
+        <p id="scan-result"></p>
+    </div>
+</div>
+
+<!-- Hacking Mini Game -->
+<section id="hacking-game">
+    <div class="game-container" data-aos="fade-up">
+        <h2 class="glitch" data-text="Hacking Challenge">Hacking Challenge</h2>
+        <div class="game-stage" id="firewall-stage">
+            <p>Stage 1: Breach the Firewall</p>
+            <input type="text" placeholder="Enter code: FIREWALL2025" aria-label="Firewall Input">
+            <button onclick="hackStage('firewall')">Submit</button>
+        </div>
+        <div class="game-stage" id="captcha-stage" style="display: none;">
+            <p>Stage 2: Crack the Captcha</p>
+            <input type="text" placeholder="Enter code: CAPTCHA2025" aria-label="Captcha Input">
+            <button onclick="hackStage('captcha')">Submit</button>
+        </div>
+        <div class="game-stage" id="network-stage" style="display: none;">
+            <p>Stage 3: Attack the Network</p>
+            <input type="text" placeholder="Enter code: NETWORK2025" aria-label="Network Input">
+            <button onclick="hackStage('network')">Submit</button>
+        </div>
+    </div>
+</section>
+
+<!-- AI/Cyber Quiz Section -->
+<section id="quiz">
+    <div data-aos="fade-up">
+        <h2 class="glitch" data-text="AI & Cyber Quiz">AI & Cyber Quiz</h2>
+        <div class="quiz-container">
+            <div id="quiz-questions"></div>
+            <button onclick="submitQuiz()">Submit Answers</button>
+            <div id="quiz-result"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Cyber Dashboard Section -->
+<section id="dashboard">
+    <div data-aos="fade-up">
+        <h2 class="glitch" data-text="Cyber Dashboard">Cyber Dashboard</h2>
+        <canvas id="dashboard-canvas" width="800" height="400"></canvas>
+    </div>
+</section>
+
+<!-- Do Not Press Button -->
+<div class="do-not-press" id="do-not-press">
+    <button onclick="triggerCollapse()">DO NOT PRESS</button>
+    <div class="collapse-message" id="collapse-message">
+        <h2>You should have listened, Agent.</h2>
+    </div>
+</div>
+
+<!-- FBI Warning -->
+<div class="fbi-warning" id="fbi-warning">
+    <div class="warning-message">
+        <h2>FBI Surveillance Alert</h2>
+        <p>You are under monitoring. Cease all activities.</p>
+        <p id="fbi-joke" style="display: none;">Relax, you’re inside Mohamed’s Cyber World.</p>
+    </div>
+</div>
+
+<!-- Fake Breach Animation -->
+<div class="fake-breach" id="fake-breach">
+    <div class="breach-message">
+        <h2>Downloading confidential files...</h2>
+        <div class="breach-timer" id="breach-timer">5</div>
+    </div>
+</div>
+
+<!-- Recruit Modal -->
+<div class="modal" id="recruit-modal">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeRecruitModal()">✖</span>
+        <h3>Join Mohamed Samir's Secret Network</h3>
+        <p>Enter your codename to join the elite hacker squad:</p>
+        <input type="text" placeholder="Codename" aria-label="Codename Input">
+        <button onclick="submitRecruit()">Register</button>
+    </div>
+</div>
+
+<!-- Easter Egg Modal -->
+<div class="modal" id="easter-egg-modal">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeEasterEggModal()">✖</span>
+        <h3>Congrats, Hacker!</h3>
+        <p>You are now part of Mohamed’s hacker squad!</p>
+    </div>
+</div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">↑</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
